@@ -7,7 +7,7 @@ const unsubscribe = apiKey.subscribe((value) => {
 	key = value;
 });
 
-export const MatchesQueue = (ticksPerMinute) => {
+export const MatchQueue = (ticksPerMinute) => {
 	const { start, pause, add } = ApiQueue(ticksPerMinute);
 	const checkKey = (setter) => {
 		const returnedValue = async () => {

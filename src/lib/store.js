@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
-import { MatchesQueue } from '$lib/service/matchesQueue';
+import { MatchQueue } from './service/matchesQueue.js';
 
 export const apiKey = writable('');
 export const isKeyVerified = writable(false);
-export const matchQue = MatchesQueue(30);
+export const matchQue = MatchQueue(30);
 matchQue.start();
