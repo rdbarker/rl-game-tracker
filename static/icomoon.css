@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?hl38ks');
+  src:  url('fonts/icomoon.eot?hl38ks#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?hl38ks') format('truetype'),
+    url('fonts/icomoon.woff?hl38ks') format('woff'),
+    url('fonts/icomoon.svg?hl38ks#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkmark:before {
+  content: "\e900";
+}
+.icon-check-alt:before {
+  content: "\e901";
+}
+.icon-x:before {
+  content: "\e902";
+}
+.icon-x-altx-alt:before {
+  content: "\e903";
+}
+.icon-cog:before {
+  content: "\e904";
+}
+.icon-spin:before {
+  content: "\e905";
+}
+.icon-sun-stroke:before {
+  content: "\e906";
+}
+.icon-sun-fill:before {
+  content: "\e907";
+}
+.icon-moon-stroke:before {
+  content: "\e908";
+}
+.icon-moon-fill:before {
+  content: "\e909";
+}
+.icon-epicgames:before {
+  content: "\e90a";
+}
+.icon-github:before {
+  content: "\e90b";
+}
+.icon-nintendoswitch:before {
+  content: "\e90c";
+  color: #e60012;
+}
+.icon-playstation:before {
+  content: "\e90d";
+  color: #003791;
+}
+.icon-steam:before {
+  content: "\e90e";
+}
+.icon-svelte:before {
+  content: "\e90f";
+  color: #ff3e00;
+}
+.icon-xbox:before {
+  content: "\e910";
+  color: #107c10;
+}
