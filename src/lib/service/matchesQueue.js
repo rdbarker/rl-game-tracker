@@ -1,21 +1,20 @@
 import { ApiQueue } from './apiQueue';
-import { apiKey } from '$lib/store';
+import { apiKey } from '$lib/store.js';
 import { fetchFromApi } from '$lib/util';
 
-let key;
-const unsubscribe = apiKey.subscribe((value) => {
-	key = value;
-});
-
-export const MatchQueue = (ticksPerMinute) => {
+export const MatchesQueue = (ticksPerMinute) => {
+	let key;
+	apiKey.subscribe((value) => {
+		key = value;
+	});
 	const { start, pause, add } = ApiQueue(ticksPerMinute);
-	const checkKey = (setter) => {
-		const returnedValue = async () => {
-			return await fetchFromApi('/api/v1/check', key);
+	const checkKey = async (setter) => {
+		const returnedValue = () => {
+			fetchFromApi('/api/v1/check', key).then((value) => {
+				setter(value);
+			});
 		};
 		add(returnedValue, true);
-
-		return returnedValue;
 	};
 
 	return { start, pause, checkKey };
