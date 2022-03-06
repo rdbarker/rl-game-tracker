@@ -16,10 +16,11 @@
     "@sveltejs/kit": "next",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
-    "svelte": "^3.44.0"
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.4"
   },
   "type": "module",
   "dependencies": {
-    "milligram": "^1.4.1"
+    "@picocss/pico": "^1.4.4"
   }
 }
