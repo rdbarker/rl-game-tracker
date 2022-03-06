@@ -1,5 +1,5 @@
 <script>
-	import { activeStats, totalAvailblePlayerStats } from '../../scripts/store/stores';
+	import { activeStats, totalAvailblePlayerStats } from '$lib/store';
 	export let teamStats;
 </script>
 
@@ -22,15 +22,3 @@
 		{/each}
 	</table>
 {/if}
-
-<style>
-	table {
-		border-collapse: collapse;
-	}
-	th {
-		margin: 0 0.5em;
-	}
-	td {
-		text-align: center;
-	}
-</style>
