@@ -1,9 +1,11 @@
 <script>
 	import KeyInput from '$lib/KeyInput.svelte';
+	import MatchList from '$lib/MatchList.svelte';
 </script>
 
 <div>
 	<KeyInput />
+	<MatchList />
 </div>
 
 <style>
