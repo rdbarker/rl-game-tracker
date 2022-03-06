@@ -1,21 +1,17 @@
 <script>
 	import { apiKey, isKeyVerified, matchQue } from '$lib/store';
-	import Icon from './icon.svelte';
-	import { fetchFromApi } from '$lib/util';
+	import Icon from './Icon.svelte';
 
 	let loading = false;
 	let icon = 'x';
 
-	const checker = async () => {
-		const response = await fetchFromApi('/api/v1/check', $apiKey);
-		$isKeyVerified = response.status;
-		icon = $isKeyVerified ? 'checkmark' : 'x';
-		loading = false;
-	};
-
 	const checkKey = () => {
 		loading = true;
-		matchQue.checkKey(checker);
+		matchQue.checkKey((value) => {
+			$isKeyVerified = value.status;
+			icon = $isKeyVerified ? 'checkmark' : 'x';
+			loading = false;
+		});
 	};
 </script>
 
