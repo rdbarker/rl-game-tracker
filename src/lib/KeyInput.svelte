@@ -7,10 +7,14 @@
 
 	const checkKey = () => {
 		loading = true;
+		matchQue.start();
 		matchQue.checkKey((value) => {
-			$isKeyVerified = value.status;
+			$isKeyVerified = value.status ? true : false;
 			icon = $isKeyVerified ? 'checkmark' : 'x';
 			loading = false;
+			if (!$isKeyVerified) {
+				matchQue.pause();
+			}
 		});
 	};
 </script>
