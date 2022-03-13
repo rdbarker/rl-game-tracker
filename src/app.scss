@@ -1,0 +1,47 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+
+$primary-500: #8bc34a;
+$primary-600: #7cb342;
+$primary-700: #689f38;
+
+$typography-spacing-vertical: 1rem;
+
+@import '@picocss/pico/scss/pico.scss';
+
+:root {
+	--typography-spacing-vertical: 0.2rem;
+	--team-orange: rgb(248, 197, 101);
+	--team-blue: rgb(133, 161, 255);
+}
+
+h1 {
+	--typography-spacing-vertical: 0.2rem;
+}
+
+table {
+	table-layout: fixed;
+	--spacing: 0.25rem;
+	--font-size: 16px;
+}
+
+th:first-child,
+td:first-child {
+	text-align: right;
+	width: 120px;
+}
+th:first-child {
+	font-size: 2em;
+}
+td:first-child {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+th {
+	vertical-align: bottom;
+	width: 3.5rem;
+}
+td,
+th {
+	text-align: center;
+}

@@ -1,4 +1,4 @@
-import { numberToPercent } from '$lib/util';
+import { numberToPercent } from '$lib/scripts/util';
 
 export const createMatchStats = (dataFromFetch) => {
 	const findWinningTeam = () => {

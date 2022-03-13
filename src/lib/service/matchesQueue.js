@@ -1,6 +1,6 @@
 import { ApiQueue } from './apiQueue';
-import { apiKey } from '$lib/store.js';
-import { fetchFromApi } from '$lib/util';
+import { apiKey } from '$lib/scripts/store.js';
+import { fetchFromApi } from '$lib/scripts/util';
 
 export const MatchesQueue = (ticksPerMinute) => {
 	let key;
@@ -24,7 +24,7 @@ export const MatchesQueue = (ticksPerMinute) => {
 
 	const fetchMatches = async (setter) => {
 		const returnedValue = () => {
-			fetchFromApi('/api/v1/matches', key).then((value) => {
+			fetchFromApi('/api/v1/matches/?count=5', key).then((value) => {
 				if (value.error === 'opps') {
 					add(returnedValue, false, true);
 				} else {

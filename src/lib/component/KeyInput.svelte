@@ -1,6 +1,8 @@
 <script>
-	import { apiKey, isKeyVerified, matchQue } from '$lib/store';
-	import Icon from './Icon.svelte';
+	import { apiKey, isKeyVerified, matchQue } from '$lib/scripts/store';
+	import { storeItem } from '$lib/scripts/util.js';
+	import Icon from '../subcomponent/Icon.svelte';
+	import { onMount } from 'svelte';
 
 	let loading = false;
 	let icon = 'x';
@@ -12,11 +14,17 @@
 			$isKeyVerified = value.status ? true : false;
 			icon = $isKeyVerified ? 'checkmark' : 'x';
 			loading = false;
-			if (!$isKeyVerified) {
+			if ($isKeyVerified) {
+				storeItem('bckey', $apiKey);
+			} else {
 				matchQue.pause();
 			}
 		});
 	};
+
+	onMount(() => {
+		checkKey();
+	});
 </script>
 
 <div>

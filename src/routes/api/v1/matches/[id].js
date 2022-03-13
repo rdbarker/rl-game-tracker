@@ -1,4 +1,4 @@
-import * as api from '$lib/api.js';
+import * as api from '$lib/scripts/api.js';
 
 export async function get({ request, params }) {
 	const headers = api.extractHeaders(request);

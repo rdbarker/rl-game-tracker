@@ -1,3 +1,7 @@
+<script>
+	import '../app.scss';
+</script>
+
 <header>
 	<h1>Rocket League Game Tracker</h1>
 	<p>
@@ -11,3 +15,6 @@
 </main>
 
 <footer />
+
+<style lang="scss">
+</style>

@@ -1,6 +1,6 @@
 <script>
-	import { matchQue } from '$lib/store';
-	import Match from '$lib/Match.svelte';
+	import { matchQue } from '$lib/scripts/store';
+	import Match from '$lib/component/Match.svelte';
 	import { createMatches } from '$lib/model/matches';
 
 	let matches = new Map();

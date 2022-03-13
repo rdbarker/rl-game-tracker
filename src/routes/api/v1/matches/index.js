@@ -1,4 +1,4 @@
-import * as api from '$lib/api.js';
+import * as api from '$lib/scripts/api.js';
 
 const DEFAULT_MATCH_COUNT = 15;
 

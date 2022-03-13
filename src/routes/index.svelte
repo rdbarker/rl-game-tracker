@@ -1,49 +1,12 @@
 <script>
-	import KeyInput from '$lib/KeyInput.svelte';
-	import MatchList from '$lib/MatchList.svelte';
+	import MatchStat from '$lib/subcomponent/MatchStat.svelte';
+	import KeyInput from '$lib/component/KeyInput.svelte';
+	import MatchList from '$lib/component/MatchList.svelte';
+	import Settings from '$lib/component/Settings.svelte';
 </script>
 
 <div>
 	<KeyInput />
+	<Settings />
 	<MatchList />
 </div>
-
-<style>
-	/* Cyan Light scheme (Default) */
-	/* Can be forced with data-theme="light" */
-	[data-theme='light'],
-	:root:not([data-theme='dark']) {
-		--primary: #00acc1;
-		--primary-hover: #0097a7;
-		--primary-focus: rgba(0, 172, 193, 0.125);
-		--primary-inverse: #fff;
-	}
-
-	/* Cyan Dark scheme (Auto) */
-	/* Automatically enabled if user has Dark mode enabled */
-	@media only screen and (prefers-color-scheme: dark) {
-		:root:not([data-theme='light']) {
-			--primary: #00acc1;
-			--primary-hover: #00bcd4;
-			--primary-focus: rgba(0, 172, 193, 0.25);
-			--primary-inverse: #fff;
-		}
-	}
-
-	/* Cyan Dark scheme (Forced) */
-	/* Enabled if forced with data-theme="dark" */
-	[data-theme='dark'] {
-		--primary: #00acc1;
-		--primary-hover: #00bcd4;
-		--primary-focus: rgba(0, 172, 193, 0.25);
-		--primary-inverse: #fff;
-	}
-
-	/* Cyan (Common styles) */
-	:root {
-		--form-element-active-border-color: var(--primary);
-		--form-element-focus-color: var(--primary-focus);
-		--switch-color: var(--primary-inverse);
-		--switch-checked-background-color: var(--primary);
-	}
-</style>

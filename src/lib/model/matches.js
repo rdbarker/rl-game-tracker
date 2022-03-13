@@ -1,15 +1,17 @@
 export const createMatches = (apiData, map = new Map()) => {
-	apiData.list.forEach((element) => {
-		if (!map.has(element.id)) {
-			map.set(element.id, {
-				date: element.date,
-				mapCode: element.map_code,
-				mapName: element.map_name,
-				playlistName: element.playlist_name,
-				overtime: element.overtime
-			});
-		}
-	});
+	if (apiData.list) {
+		apiData.list.forEach((element) => {
+			if (!map.has(element.id)) {
+				map.set(element.id, {
+					date: element.date,
+					mapCode: element.map_code,
+					mapName: element.map_name,
+					playlistName: element.playlist_name,
+					overtime: element.overtime
+				});
+			}
+		});
+	}
 	return sortMatches(map);
 };
 
