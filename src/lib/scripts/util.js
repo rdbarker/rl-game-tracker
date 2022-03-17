@@ -26,3 +26,7 @@ export const getItem = (itemKey, defaultValue = '') => {
 		return value ? value : defaultValue;
 	}
 };
+
+export function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
