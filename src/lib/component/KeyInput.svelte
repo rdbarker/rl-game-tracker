@@ -33,6 +33,3 @@
 		><Icon bind:icon bind:loading /> Check Key</button
 	>
 </div>
-
-<style>
-</style>
