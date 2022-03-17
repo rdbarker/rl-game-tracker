@@ -3,9 +3,11 @@
 	import { activeMatchStats } from '$lib/scripts/store';
 
 	export let stats;
+	export let color = 'white';
 </script>
 
-<div>
+<article class="player-card">
+	<h6>Match Stats</h6>
 	{#each Object.entries($activeMatchStats) as [stat, statObj]}
 		{#if statObj.active}
 			<MatchStat
@@ -17,4 +19,4 @@
 			>
 		{/if}
 	{/each}
-</div>
+</article>
