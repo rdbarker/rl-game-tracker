@@ -1,8 +1,8 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 
-$primary-500: #8bc34a;
-$primary-600: #7cb342;
-$primary-700: #689f38;
+$primary-500: #607d8b;
+$primary-600: #546e7a;
+$primary-700: #455a64;
 
 $typography-spacing-vertical: 1rem;
 
@@ -44,4 +44,44 @@ th {
 td,
 th {
 	text-align: center;
+}
+
+article {
+	padding: 0.5rem;
+	border: 2px solid var(--muted-border-color);
+	border-bottom: 4px solid var(--team-orange);
+}
+.player-card {
+	max-width: 240px;
+	font-size: 0.8em;
+	border-bottom: 4px solid var(--muted-border-color);
+}
+.player-card.blue {
+	border-bottom: 4px solid var(--team-blue);
+}
+.player-card.orange {
+	border-bottom: 4px solid var(--team-orange);
+}
+.player-card-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
+.player-card-ranks {
+	grid-template-columns: 1fr;
+}
+.player-card-section > div {
+	padding: 0.1em 0.4em;
+	background-color: #52525226;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 4px;
+	gap: 8px;
+}
+.player-card-ranks > div {
+	display: flex;
+}
+.player-card-divider {
+	margin: 0.4em 0.4em;
+	border: 1px solid var(--muted-border-color);
 }
