@@ -11,5 +11,7 @@
 	const timeFormatted = date.toLocaleTimeString();
 </script>
 
-{timeFormatted}
-{dateFormatted}
+<h6>
+	{timeFormatted}
+	{dateFormatted}
+</h6>
