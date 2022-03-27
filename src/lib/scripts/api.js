@@ -4,6 +4,7 @@ export const RANK_BASE_URL = 'https://api.tracker.gg/api/v2/rocket-league/standa
 export async function fetchResource(url, headers) {
 	const response = await fetch(url, headers);
 	const json = await response.json();
+
 	if (json) {
 		return {
 			body: json
