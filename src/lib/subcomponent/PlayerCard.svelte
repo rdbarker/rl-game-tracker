@@ -1,8 +1,13 @@
 <script>
-	import { activePlayerStats } from '$lib/scripts/store';
+	import { activePlayerStats, activePlayerRanks, rankQue } from '$lib/scripts/store';
 	import PlatformIcon from './PlatformIcon.svelte';
+	import { shortenRankString } from '$lib/scripts/util';
 	export let playerStats;
 	export let color;
+	let playerRanks;
+	rankQue.fetchRank(playerStats.name, playerStats.id, playerStats.platform, (value) => {
+		playerRanks = value;
+	});
 </script>
 
 {#if playerStats}
@@ -20,18 +25,21 @@
 		</div>
 		<div class="player-card-divider" />
 		<div class="player-card-section player-card-ranks">
-			<div>
-				<div>Doubles:</div>
-				<div>GC III</div>
-			</div>
-			<div>
-				<div>Threes:</div>
-				<div>Diamond III</div>
-			</div>
-			<div>
-				<div>Hoops:</div>
-				<div>Platnium III</div>
-			</div>
+			{#each Object.entries($activePlayerRanks) as [stat, statObj]}
+				{#if statObj.active}
+					<div>
+						<div>{statObj.name}:</div>
+						<div>
+							{#if playerRanks}
+								{#if playerRanks[statObj.value]}
+									{shortenRankString(playerRanks[statObj.value].rank)}
+									{shortenRankString(playerRanks[statObj.value].division)}
+								{/if}
+							{/if}
+						</div>
+					</div>
+				{/if}
+			{/each}
 		</div>
 	</article>
 {/if}
