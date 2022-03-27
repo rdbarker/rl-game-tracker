@@ -1,9 +1,8 @@
 <script>
 	import Setting from '$lib/subcomponent/Setting.svelte';
-	import { activePlayerStats, activeMatchStats } from '$lib/scripts/store';
+	import { activePlayerStats, activeMatchStats, activePlayerRanks } from '$lib/scripts/store';
 	import KeyInput from './KeyInput.svelte';
-	import Icon from '$lib/subcomponent/Icon.svelte';
-	let isOn = true;
+	console.log($activePlayerRanks);
 </script>
 
 <details>
@@ -32,11 +31,28 @@
 			<Setting name="team-saves" bind:on={$activeMatchStats.saves.active}>Saves</Setting>
 		</div>
 	</fieldset>
+
+	<fieldset>
+		<legend>Team Match Stats</legend>
+		<div class="grid-auto">
+			<Setting name="rank-ones" bind:on={$activePlayerRanks.ones.active}>1v1s</Setting>
+			<Setting name="rank-doubles" bind:on={$activePlayerRanks.doubles.active}>2v2</Setting>
+			<Setting name="rank-threes" bind:on={$activePlayerRanks.threes.active}>3v3</Setting>
+			<Setting name="rank-unranked" bind:on={$activePlayerRanks.unranked.active}>Unranked</Setting>
+			<Setting name="rank-rumble" bind:on={$activePlayerRanks.rumble.active}>Rumble</Setting>
+			<Setting name="rank-hoops" bind:on={$activePlayerRanks.hoops.active}>Hoops</Setting>
+			<Setting name="rank-dropshot" bind:on={$activePlayerRanks.dropshot.active}>Dropshot</Setting>
+			<Setting name="rank-snowday" bind:on={$activePlayerRanks.snowday.active}>Snowday</Setting>
+			<Setting name="rank-tournaments" bind:on={$activePlayerRanks.tournament.active}>
+				Tournaments
+			</Setting>
+		</div>
+	</fieldset>
 </details>
 
 <style>
 	.grid-auto {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 	}
 </style>
