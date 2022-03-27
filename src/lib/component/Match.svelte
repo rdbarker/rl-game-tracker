@@ -2,7 +2,6 @@
 	import { createMatchStats } from '$lib/model/match';
 	import { matchQue } from '$lib/scripts/store';
 	import TimeHeader from '../subcomponent/TimeHeader.svelte';
-	import { capitalizeFirstLetter } from '$lib/scripts/util';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import MatchStats from './MatchStats.svelte';
