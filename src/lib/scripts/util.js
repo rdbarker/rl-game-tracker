@@ -30,3 +30,12 @@ export const getItem = (itemKey, defaultValue = '') => {
 export function capitalizeFirstLetter(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function shortenRankString(string) {
+	return string
+		.replace('Grand Champion', 'GC')
+		.replace('Platinum', 'Plat')
+		.replace('Champion', 'Champ')
+		.replace('Diamond', 'Dia')
+		.replace('Division', 'Div');
+}
