@@ -1,9 +1,9 @@
 <script>
-	import { apiKey, isKeyVerified, matchQue } from '$lib/scripts/store';
+	import { apiKey, isKeyVerified, matchQue, rankQue } from '$lib/scripts/store';
 	import { storeItem } from '$lib/scripts/util.js';
 	import Icon from '../subcomponent/Icon.svelte';
 	import { onMount } from 'svelte';
-
+	import axios from 'axios';
 	let loading = false;
 	let icon = 'x';
 
